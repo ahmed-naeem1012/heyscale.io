@@ -12,7 +12,7 @@ import {
   Star,
 } from "lucide-react";
 import Marquee from "react-fast-marquee";
-import { useEffect, useId, useMemo, useRef, useState } from "react";
+import { useEffect, useId, useMemo, useRef, useState, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 
 type Testimonial = {
@@ -140,7 +140,7 @@ function clampInt(value: string | null, min: number, max: number) {
   return Math.min(max, Math.max(min, Math.trunc(n)));
 }
 
-export default function ConfirmationPage() {
+function ConfirmationContent() {
   const params = useSearchParams();
   const euQty = clampInt(params.get("eu"), 0, 99);
   const usQty = clampInt(params.get("us"), 0, 99);
@@ -416,5 +416,17 @@ export default function ConfirmationPage() {
         </section>
       </div>
     </div>
+  );
+}
+
+export default function ConfirmationPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen bg-[#FAFCFE] px-10 py-10 flex items-center justify-center">
+        <div className="text-zinc-600">Loading...</div>
+      </div>
+    }>
+      <ConfirmationContent />
+    </Suspense>
   );
 }
