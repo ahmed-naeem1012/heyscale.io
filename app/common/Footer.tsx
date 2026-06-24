@@ -54,7 +54,7 @@ export default function Footer() {
               </ul>
             </div>
 
-            <div>
+            {/* <div>
               <div className="text-md font-semibold text-white">Help</div>
               <ul className="mt-4 space-y-3 text-sm text-[#A9A9A9]">
                 <li>
@@ -68,7 +68,7 @@ export default function Footer() {
                   </Link>
                 </li>
               </ul>
-            </div>
+            </div> */}
           </div>
 
           <div className="text-xs leading-5 text-[#C2C2C2]">

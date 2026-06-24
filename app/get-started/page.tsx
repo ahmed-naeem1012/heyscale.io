@@ -413,7 +413,7 @@ export default function GetStartedPage() {
 
           <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
             <Link
-              href="https://cal.com/daniyal-dehleh-wqshni/30min"
+              href="https://cal.com/daniyal-dehleh-wqshni/other-meeting"
               target="_blank"
               className="inline-flex h-12 items-center justify-center rounded-lg border border-[#EBEBEB] bg-white text-sm font-semibold text-zinc-800 hover:bg-zinc-50"
             >
