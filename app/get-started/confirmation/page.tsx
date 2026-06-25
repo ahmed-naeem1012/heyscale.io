@@ -104,11 +104,17 @@ function TestimonialCarousel({ items }: { items: Testimonial[] }) {
             key={`${t.name}-${t.role}`}
             className="w-full min-w-full snap-start rounded-2xl bg-white px-12 py-10 text-sky-950 shadow-sm"
           >
-            <div className="text-5xl font-black leading-none text-[#0076B7]">“</div>
-            <p className="mt-2 text-md font-semibold leading-6 text-[#1B1B1B]">{t.quote}</p>
+            <div className="text-5xl font-black leading-none text-[#0076B7]">
+              “
+            </div>
+            <p className="mt-2 text-md font-semibold leading-6 text-[#1B1B1B]">
+              {t.quote}
+            </p>
             <div className="mt-8 flex items-end justify-between">
               <div>
-                <div className="text-md font-semibold text-[#1B1B1B]">{t.name}</div>
+                <div className="text-md font-semibold text-[#1B1B1B]">
+                  {t.name}
+                </div>
                 <div className="text-sm text-[#767676]">{t.role}</div>
               </div>
               <div className="flex items-center gap-1 text-sm font-semibold text-[#0076B7]">
@@ -145,19 +151,28 @@ function ConfirmationContent() {
   const euQty = clampInt(params.get("eu"), 0, 99);
   const usQty = clampInt(params.get("us"), 0, 99);
   const linkedInQty = euQty + usQty;
-  const euUnit = 139;
-  const usUnit = 199;
+  const euUnit = 199;
+  const usUnit = 249;
   const salesNavUnit = 89;
   const salesNavQty = linkedInQty;
 
   const reactId = useId();
   const orderId = useMemo(
-    () => reactId.replaceAll(":", "").replaceAll("-", "").toUpperCase().slice(0, 12),
+    () =>
+      reactId
+        .replaceAll(":", "")
+        .replaceAll("-", "")
+        .toUpperCase()
+        .slice(0, 12),
     [reactId],
   );
   const dateLabel = useMemo(() => {
     const d = new Date();
-    return d.toLocaleDateString(undefined, { year: "numeric", month: "long", day: "numeric" });
+    return d.toLocaleDateString(undefined, {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    });
   }, []);
 
   const totals = useMemo(() => {
@@ -235,14 +250,17 @@ function ConfirmationContent() {
             <br /> outreach and business.
           </h1>
           <p className="mt-4 max-w-2xl text-md justify-self-center text-center text-[#EBEBEB]">
-            See every account&apos;s status, connections, and activity in one view. Add more as you
-            grow and never lose track of what&apos;s running.
+            See every account&apos;s status, connections, and activity in one
+            view. Add more as you grow and never lose track of what&apos;s
+            running.
           </p>
 
           <TestimonialCarousel items={testimonials} />
 
           <div className="mt-10">
-            <div className="text-center text-sm font-semibold text-white">COMPATIBLE WITH</div>
+            <div className="text-center text-sm font-semibold text-white">
+              COMPATIBLE WITH
+            </div>
             <div className="mt-6">
               <Marquee gradient={false} speed={40}>
                 <div className="relative h-6 w-[850px] mr-5 px-10 md:h-8">
@@ -284,7 +302,9 @@ function ConfirmationContent() {
           </div>
 
           <div className="mt-6">
-            <div className="text-lg font-semibold text-zinc-900">Thank you for your purchases!</div>
+            <div className="text-lg font-semibold text-zinc-900">
+              Thank you for your purchases!
+            </div>
             <div className="mt-1 text-sm text-zinc-500">
               Here&apos;s your detailed breakdown of your purchases.
             </div>
@@ -293,10 +313,14 @@ function ConfirmationContent() {
           <div className="mt-6 rounded-2xl border border-[#EBEBEB] bg-[#FAFAFA] p-4">
             <div className="flex items-start justify-between gap-6">
               <div>
-                <div className="text-md font-semibold text-zinc-900">Order Summary</div>
+                <div className="text-md font-semibold text-zinc-900">
+                  Order Summary
+                </div>
                 <div className="mt-1 text-xs text-zinc-500">{dateLabel}</div>
               </div>
-              <div className="text-xs font-semibold text-zinc-500">{orderId}</div>
+              <div className="text-xs font-semibold text-zinc-500">
+                {orderId}
+              </div>
             </div>
 
             <div className="mt-6 space-y-4">
@@ -314,8 +338,12 @@ function ConfirmationContent() {
                     </div>
                   </div>
                   <div className="mt-2 flex items-center justify-between text-sm text-[#767676]">
-                    <span className="font-medium text-md text-[#767676]">Subtotal</span>
-                    <span className="font-semibold text-zinc-900">${totals.eu}</span>
+                    <span className="font-medium text-md text-[#767676]">
+                      Subtotal
+                    </span>
+                    <span className="font-semibold text-zinc-900">
+                      ${totals.eu}
+                    </span>
                   </div>
                 </div>
               ) : null}
@@ -334,8 +362,12 @@ function ConfirmationContent() {
                     </div>
                   </div>
                   <div className="mt-2 flex items-center justify-between text-xs text-zinc-500">
-                    <span className="font-medium text-md text-[#767676]">Subtotal</span>
-                    <span className="font-semibold text-zinc-900">${totals.us}</span>
+                    <span className="font-medium text-md text-[#767676]">
+                      Subtotal
+                    </span>
+                    <span className="font-semibold text-zinc-900">
+                      ${totals.us}
+                    </span>
                   </div>
                 </div>
               ) : null}
@@ -351,12 +383,17 @@ function ConfirmationContent() {
                     Sales Navigator
                   </div>
                   <div className="font-semibold text-zinc-900">
-                    ${salesNavUnit} <span className="text-zinc-500">x</span> {salesNavQty}
+                    ${salesNavUnit} <span className="text-zinc-500">x</span>{" "}
+                    {salesNavQty}
                   </div>
                 </div>
                 <div className="mt-2 flex items-center justify-between text-sm text-[#767676]">
-                  <span className="font-medium text-md text-[#767676]">Subtotal</span>
-                  <span className="font-semibold text-zinc-900">${totals.salesNav}</span>
+                  <span className="font-medium text-md text-[#767676]">
+                    Subtotal
+                  </span>
+                  <span className="font-semibold text-zinc-900">
+                    ${totals.salesNav}
+                  </span>
                 </div>
               </div>
 
@@ -372,26 +409,36 @@ function ConfirmationContent() {
           </div>
 
           <div className="mt-6 rounded-2xl border border-[#0076B7] bg-[#0076B714] p-6">
-            <div className="text-sm font-semibold text-zinc-900">What happens next:</div>
+            <div className="text-sm font-semibold text-zinc-900">
+              What happens next:
+            </div>
             <div className="mt-4 grid grid-cols-1 gap-3 text-xs text-zinc-700">
               <div className="flex items-center gap-3">
                 <Clock className="h-4 w-4 text-[#0076B7]" />
-                <span className="w-16 font-semibold text-zinc-900">1–5 min</span>
+                <span className="w-16 font-semibold text-zinc-900">
+                  1–5 min
+                </span>
                 <span>Credentials delivered to your Vault</span>
               </div>
               <div className="flex items-center gap-3">
                 <Flame className="h-4 w-4 text-[#0076B7]" />
-                <span className="w-16 font-semibold text-zinc-900">Day 1–14</span>
+                <span className="w-16 font-semibold text-zinc-900">
+                  Day 1–14
+                </span>
                 <span>Warm-up phase begins automatically</span>
               </div>
               <div className="flex items-center gap-3">
                 <Rocket className="h-4 w-4 text-[#0076B7]" />
-                <span className="w-16 font-semibold text-zinc-900">Day 15+</span>
+                <span className="w-16 font-semibold text-zinc-900">
+                  Day 15+
+                </span>
                 <span>Account ready for full outreach</span>
               </div>
               <div className="flex items-center gap-3">
                 <ShieldCheck className="h-4 w-4 text-[#0076B7]" />
-                <span className="w-16 font-semibold text-zinc-900">30 days</span>
+                <span className="w-16 font-semibold text-zinc-900">
+                  30 days
+                </span>
                 <span>Replacement warranty active</span>
               </div>
             </div>
@@ -421,11 +468,13 @@ function ConfirmationContent() {
 
 export default function ConfirmationPage() {
   return (
-    <Suspense fallback={
-      <div className="min-h-screen bg-[#FAFCFE] px-10 py-10 flex items-center justify-center">
-        <div className="text-zinc-600">Loading...</div>
-      </div>
-    }>
+    <Suspense
+      fallback={
+        <div className="min-h-screen bg-[#FAFCFE] px-10 py-10 flex items-center justify-center">
+          <div className="text-zinc-600">Loading...</div>
+        </div>
+      }
+    >
       <ConfirmationContent />
     </Suspense>
   );

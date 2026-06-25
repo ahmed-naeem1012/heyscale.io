@@ -53,7 +53,14 @@ function OrbitAvatarSvg({
         clipPath={`url(#${clipId})`}
       />
 
-      <circle cx={cx} cy={cy} r={r} fill="none" stroke="#ffffff" strokeWidth={6} />
+      <circle
+        cx={cx}
+        cy={cy}
+        r={r}
+        fill="none"
+        stroke="#ffffff"
+        strokeWidth={6}
+      />
 
       {showBadge ? (
         <g>
@@ -178,14 +185,56 @@ function HeroOrbitsSvg() {
         strokeWidth="2"
       />
 
-      <OrbitAvatarSvg id="pl" href="/images/img-6.svg" cx={160} cy={78} size={46} />
-      <OrbitAvatarSvg id="jl" href="/images/img-6.svg" cx={960} cy={78} size={46} />
-      <OrbitAvatarSvg id="kl" href="/images/img-6.svg" cx={170} cy={452} size={46} />
-      <OrbitAvatarSvg id="ll" href="/images/img-6.svg" cx={950} cy={442} size={46} />
+      <OrbitAvatarSvg
+        id="pl"
+        href="/images/img-6.svg"
+        cx={160}
+        cy={78}
+        size={46}
+      />
+      <OrbitAvatarSvg
+        id="jl"
+        href="/images/img-6.svg"
+        cx={960}
+        cy={78}
+        size={46}
+      />
+      <OrbitAvatarSvg
+        id="kl"
+        href="/images/img-6.svg"
+        cx={170}
+        cy={452}
+        size={46}
+      />
+      <OrbitAvatarSvg
+        id="ll"
+        href="/images/img-6.svg"
+        cx={950}
+        cy={442}
+        size={46}
+      />
 
-      <OrbitAvatarSvg id="ml" href="/images/img-6.svg" cx={14} cy={260} size={44} />
-      <OrbitAvatarSvg id="nl" href="/images/img-6.svg" cx={1062} cy={260} size={44} />
-      <OrbitAvatarSvg id="ol" href="/images/img-6.svg" cx={1022} cy={305} size={44} />
+      <OrbitAvatarSvg
+        id="ml"
+        href="/images/img-6.svg"
+        cx={14}
+        cy={260}
+        size={44}
+      />
+      <OrbitAvatarSvg
+        id="nl"
+        href="/images/img-6.svg"
+        cx={1062}
+        cy={260}
+        size={44}
+      />
+      <OrbitAvatarSvg
+        id="ol"
+        href="/images/img-6.svg"
+        cx={1022}
+        cy={305}
+        size={44}
+      />
 
       <OrbitAvatarSvg
         id="tl"
@@ -306,9 +355,17 @@ function BenefitsRail({
             className="min-w-[320px] flex-1 rounded-xl border border-[#EBEBEB] bg-white p-6 shadow-sm"
           >
             <div className="grid h-10 w-10 place-items-center rounded-lg bg-[#0076B714]">
-              <Image src={iconSrc} alt="" width={20} height={20} className="h-5 w-5" />
+              <Image
+                src={iconSrc}
+                alt=""
+                width={20}
+                height={20}
+                className="h-5 w-5"
+              />
             </div>
-            <div className="mt-4 text-md font-semibold text-zinc-900">{title}</div>
+            <div className="mt-4 text-md font-semibold text-zinc-900">
+              {title}
+            </div>
             <div className="mt-2 text-sm text-zinc-600">{description}</div>
           </div>
         ))}
@@ -397,8 +454,8 @@ function ProfilesRail({
           />
           <div className="p-5">
             <div className="mt-5 flex items-center gap-1 text-[20px] font-semibold text-zinc-900">
-            {p.name}
-            <BadgeCheck className="h-4 w-4 text-[#0076B7]" />
+              {p.name}
+              <BadgeCheck className="h-4 w-4 text-[#0076B7]" />
             </div>
             <div className="mt-1 text-sm text-zinc-600">{p.role}</div>
             <div className="text-xs text-zinc-400">{p.location}</div>
@@ -423,7 +480,10 @@ export default function Home() {
   const [partners, setPartners] = useState(3);
   const features = [
     { label: "3 Months of Warmup", iconSrc: "/icons/flash-circle.svg" },
-    { label: "Responsive Customer Service", iconSrc: "/icons/customer-support.svg" },
+    {
+      label: "Responsive Customer Service",
+      iconSrc: "/icons/customer-support.svg",
+    },
     { label: "Trusted by 500+ Companies", iconSrc: "/icons/star.svg" },
     { label: "No Commitment", iconSrc: "/icons/shield-cross.svg" },
     { label: "Real Verified Account", iconSrc: "/icons/profile-user.svg" },
@@ -550,14 +610,15 @@ export default function Home() {
               </h1>
 
               <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-zinc-600 lg:text-base">
-                Stop Hitting Daily Limits. Start Scaling without limits with aged, verified
-                profiles for
+                Stop Hitting Daily Limits. Start Scaling without limits with
+                aged, verified profiles for
               </p>
 
               <div className="mt-3 flex flex-wrap gap-1 items-center justify-center text-xs font-semibold text-[#0076B7] lg:text-sm">
                 <span className="rounded-md border border-[#0076B7] bg-[#E7EEF1] px-2.5 py-1">
                   Lead Gen Agencies
-                </span>,
+                </span>
+                ,
                 <span className=" rounded-md border border-[#0076B7] bg-[#E7EEF1] px-2.5 py-1">
                   Sales Teams
                 </span>
@@ -595,7 +656,9 @@ export default function Home() {
                     priority={false}
                   />
                 </span>
-                <span className="text-sm font-semibold text-[#0076B7]">{label}</span>
+                <span className="text-sm font-semibold text-[#0076B7]">
+                  {label}
+                </span>
               </div>
             ))}
           </div>
@@ -605,32 +668,31 @@ export default function Home() {
               COMPATIBLE WITH
             </div>
             <div className="mt-6">
-          <Marquee gradient={false} speed={40}>
-            <div className="relative h-8 w-[1150px] px-10 mr-5 md:h-10">
-              <Image
-                src="/images/compatible-logos.svg"
-                alt="Trusted companies"
-                fill
-                sizes="1150px"
-                className="object-contain"
-                loading="eager"
-                priority
-              />
+              <Marquee gradient={false} speed={40}>
+                <div className="relative h-8 w-[1150px] px-10 mr-5 md:h-10">
+                  <Image
+                    src="/images/compatible-logos.svg"
+                    alt="Trusted companies"
+                    fill
+                    sizes="1150px"
+                    className="object-contain"
+                    loading="eager"
+                    priority
+                  />
+                </div>
+                <div className="relative h-8 w-[1150px] px-10 ml-5 md:h-10">
+                  <Image
+                    src="/images/compatible-logos.svg"
+                    alt="Trusted companies"
+                    fill
+                    sizes="1150px"
+                    className="object-contain"
+                    loading="lazy"
+                    priority={false}
+                  />
+                </div>
+              </Marquee>
             </div>
-            <div className="relative h-8 w-[1150px] px-10 ml-5 md:h-10">
-              <Image
-                src="/images/compatible-logos.svg"
-                alt="Trusted companies"
-                fill
-                sizes="1150px"
-                className="object-contain"
-                loading="lazy"
-                priority={false}
-              />
-            </div>
-          </Marquee>
-        </div>
-
           </div>
         </section>
 
@@ -643,8 +705,8 @@ export default function Home() {
               Trusted by Sales Teams That Play to Win
             </h2>
             <p className="mt-4 max-w-2xl text-sm leading-7 text-zinc-600 sm:text-base">
-              No Bots, Real Humans. Every account is hand-verified, aged, and outreach-ready
-              from day one.
+              No Bots, Real Humans. Every account is hand-verified, aged, and
+              outreach-ready from day one.
             </p>
           </div>
 
@@ -733,8 +795,9 @@ export default function Home() {
               Stop Hitting Daily Limits. Start Scaling without limits
             </h3>
             <p className="mx-auto mt-4 max-w-5xl text-sm leading-7 text-zinc-600 sm:text-base">
-              Every account arrives aged, verified, and ready to go. Add as many as you need,
-              manage them all in one place, and scale without the usual headaches.
+              Every account arrives aged, verified, and ready to go. Add as many
+              as you need, manage them all in one place, and scale without the
+              usual headaches.
             </p>
           </div>
 
@@ -758,7 +821,7 @@ export default function Home() {
                     />
                   </span>
                   <span className="inline-flex items-center">
-                   <Image
+                    <Image
                       src="/images/linkedin-available.svg"
                       alt="LinkedIn Available"
                       width={30}
@@ -800,22 +863,24 @@ export default function Home() {
             <div className="rounded-2xl border border-[#EBEBEB] bg-white p-6">
               <div className="flex items-start justify-between">
                 <div>
-                    <Image
-                      src="/images/european-union.svg"
-                      alt="European Union"
-                      width={30}
-                      height={30}
-                      className="h-6 md:h-8 w-auto"
-                      priority={false}
-                      loading="lazy"
-                    />
+                  <Image
+                    src="/images/european-union.svg"
+                    alt="European Union"
+                    width={30}
+                    height={30}
+                    className="h-6 md:h-8 w-auto"
+                    priority={false}
+                    loading="lazy"
+                  />
                   <div className="mt-2 text-xl font-semibold text-zinc-900">
                     European Accounts
                   </div>
-                  <div className="mt-1 text-xs text-[#494949]">Flexible Account Options</div>
+                  <div className="mt-1 text-xs text-[#494949]">
+                    Flexible Account Options
+                  </div>
                 </div>
                 <div className="text-right">
-                  <div className="text-3xl font-light text-black">$139</div>
+                  <div className="text-3xl font-light text-black">$199</div>
                   <div className="text-xs text-[#494949]">/profile/mo</div>
                 </div>
               </div>
@@ -853,22 +918,24 @@ export default function Home() {
             <div className="rounded-2xl border border-[#EBEBEB] bg-white p-6">
               <div className="flex items-start justify-between">
                 <div>
-                    <Image
-                      src="/images/united-states.svg"
-                      alt="United States"
-                      width={30}
-                      height={30}
-                      className="h-6 md:h-8 w-auto"
-                      priority={false}
-                      loading="lazy"
-                    />
+                  <Image
+                    src="/images/united-states.svg"
+                    alt="United States"
+                    width={30}
+                    height={30}
+                    className="h-6 md:h-8 w-auto"
+                    priority={false}
+                    loading="lazy"
+                  />
                   <div className="mt-2 text-xl font-semibold text-zinc-900">
                     U.S. Accounts
                   </div>
-                  <div className="mt-1 text-xs text-[#494949]">Flexible Account Options</div>
+                  <div className="mt-1 text-xs text-[#494949]">
+                    Flexible Account Options
+                  </div>
                 </div>
                 <div className="text-right">
-                  <div className="text-3xl font-light text-black">$199</div>
+                  <div className="text-3xl font-light text-black">$249</div>
                   <div className="text-xs text-[#494949]">/profile/mo</div>
                 </div>
               </div>
@@ -911,8 +978,8 @@ export default function Home() {
               Every Account. Every Detail. One Place.
             </h3>
             <p className="mx-auto mt-3 max-w-5xl text-sm leading-7 text-zinc-600 sm:text-base">
-              See every account’s status, connections, and activity in one view. Add more as you
-              grow and never lose track of what’s running.
+              See every account’s status, connections, and activity in one view.
+              Add more as you grow and never lose track of what’s running.
             </p>
           </div>
           <div className="mt-10">
@@ -948,10 +1015,14 @@ export default function Home() {
                   >
                     <Quote className="h-6 w-6 text-[#0076B7] fill-[#0076B7]" />
                     <div className="flex flex-col justify-between">
-                      <p className="mt-4 text-sm leading-6 text-zinc-700">{t.quote}</p>
+                      <p className="mt-4 text-sm leading-6 text-zinc-700">
+                        {t.quote}
+                      </p>
                       <div className="mt-6 flex items-end justify-between">
                         <div>
-                          <div className="text-sm font-semibold text-zinc-900">{t.name}</div>
+                          <div className="text-sm font-semibold text-zinc-900">
+                            {t.name}
+                          </div>
                           <div className="text-xs text-zinc-500">{t.role}</div>
                         </div>
                         <div className="flex items-center gap-1 text-sm font-semibold text-[#0076B7]">
@@ -976,10 +1047,14 @@ export default function Home() {
                   >
                     <Quote className="h-6 w-6 text-[#0076B7] fill-[#0076B7]" />
                     <div className="flex flex-col justify-between">
-                      <p className="mt-4 text-sm leading-6 text-zinc-700">{t.quote}</p>
+                      <p className="mt-4 text-sm leading-6 text-zinc-700">
+                        {t.quote}
+                      </p>
                       <div className="mt-6 flex items-end justify-between">
                         <div>
-                          <div className="text-sm font-semibold text-zinc-900">{t.name}</div>
+                          <div className="text-sm font-semibold text-zinc-900">
+                            {t.name}
+                          </div>
                           <div className="text-xs text-zinc-500">{t.role}</div>
                         </div>
                         <div className="flex items-center gap-1 text-sm font-semibold text-[#0076B7]">
@@ -1004,9 +1079,9 @@ export default function Home() {
               Frequently asked questions
             </h3>
             <p className="mx-auto mt-4 max-w-4xl text-sm leading-7 text-zinc-600 sm:text-base">
-              Everything you may want to know before buying LinkedIn accounts, from account types
-              and filters to warranty coverage, status tracking, and how existing accounts fit
-              into your workflow.
+              Everything you may want to know before buying LinkedIn accounts,
+              from account types and filters to warranty coverage, status
+              tracking, and how existing accounts fit into your workflow.
             </p>
           </div>
 
@@ -1017,9 +1092,9 @@ export default function Home() {
                   What kind of LinkedIn accounts can I buy?
                 </h4>
                 <p className="mt-3 text-sm leading-7 text-zinc-600">
-                  You can filter accounts by age, location, connection volume, verification
-                  status, and Sales Navigator availability — so you only get profiles that match
-                  exactly what your outreach needs.
+                  You can filter accounts by age, location, connection volume,
+                  verification status, and Sales Navigator availability — so you
+                  only get profiles that match exactly what your outreach needs.
                 </p>
               </div>
               <div className="h-px w-full bg-zinc-200" />
@@ -1028,9 +1103,9 @@ export default function Home() {
                   Can I see which accounts are active?
                 </h4>
                 <p className="mt-3 text-sm leading-7 text-zinc-600">
-                  Yes. The dashboard shows the real-time status of every account — active or
-                  restricted — so your team can react immediately and never lose a day of
-                  outreach.
+                  Yes. The dashboard shows the real-time status of every account
+                  — active or restricted — so your team can react immediately
+                  and never lose a day of outreach.
                 </p>
               </div>
               <div className="h-px w-full bg-zinc-200" />
@@ -1042,9 +1117,9 @@ export default function Home() {
                   Do you offer replacement or warranty coverage?
                 </h4>
                 <p className="mt-3 text-sm leading-7 text-zinc-600">
-                  Yes. Every account comes with warranty coverage. If an account gets restricted
-                  or flagged through no fault of your own, we replace it within 24 hours — no
-                  back and forth, no delays.
+                  Yes. Every account comes with warranty coverage. If an account
+                  gets restricted or flagged through no fault of your own, we
+                  replace it within 24 hours — no back and forth, no delays.
                 </p>
               </div>
               <div className="h-px w-full bg-zinc-200" />
@@ -1053,9 +1128,9 @@ export default function Home() {
                   How fast can I get started?
                 </h4>
                 <p className="mt-3 text-sm leading-7 text-zinc-600">
-                  Most teams are up and running within the same day. Accounts are delivered ready
-                  to use — no warming period, no setup headaches, just plug into your sequencer
-                  and go.
+                  Most teams are up and running within the same day. Accounts
+                  are delivered ready to use — no warming period, no setup
+                  headaches, just plug into your sequencer and go.
                 </p>
               </div>
               <div className="h-px w-full bg-zinc-200" />
@@ -1065,14 +1140,14 @@ export default function Home() {
 
         <section className="w-full max-w-7xl pt-16 pb-24">
           <div className="relative rounded-3xl bg-[#0076B7] text-white">
-
             <div className="relative flex items-center gap-10">
               <div className="px-14 py-10">
                 <h3 className="text-3xl font-semibold sm:text-4xl">
                   More Profiles. More Meetings. More Deals Closed.
                 </h3>
                 <p className="mt-4 max-w-4xl w-full text-sm leading-7 text-white/80 sm:text-base">
-                  Scale your outreach, multiply your touchpoints, and watch your pipeline grow.
+                  Scale your outreach, multiply your touchpoints, and watch your
+                  pipeline grow.
                 </p>
                 <a
                   href="/get-started"
