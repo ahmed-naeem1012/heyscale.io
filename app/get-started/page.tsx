@@ -18,7 +18,7 @@ const plans: Plan[] = [
   {
     id: "eu",
     title: "European Accounts",
-    price: 139,
+    price: 199,
     flagSrc: "/images/european-union.svg",
     features: [
       "Profile Located in European",
@@ -33,7 +33,7 @@ const plans: Plan[] = [
   {
     id: "us",
     title: "U.S. Accounts",
-    price: 199,
+    price: 249,
     flagSrc: "/images/united-states.svg",
     features: [
       "Profile Located in United States",
@@ -142,7 +142,9 @@ function TestimonialCarousel({ items }: { items: Testimonial[] }) {
             </p>
             <div className="mt-8 flex items-end justify-between">
               <div>
-                <div className="text-md font-semibold text-[#1B1B1B]">{t.name}</div>
+                <div className="text-md font-semibold text-[#1B1B1B]">
+                  {t.name}
+                </div>
                 <div className="text-sm text-[#767676]">{t.role}</div>
               </div>
               <div className="flex items-center gap-1 text-sm font-semibold text-[#0076B7]">
@@ -239,8 +241,9 @@ export default function GetStartedPage() {
             <br /> outreach and business.
           </h1>
           <p className="mt-4 max-w-2xl text-md justify-self-center text-center text-[#EBEBEB]">
-            See every account&apos;s status, connections, and activity in one view. Add more as
-            you grow and never lose track of what&apos;s running.
+            See every account&apos;s status, connections, and activity in one
+            view. Add more as you grow and never lose track of what&apos;s
+            running.
           </p>
 
           <TestimonialCarousel items={testimonials} />
@@ -314,15 +317,21 @@ export default function GetStartedPage() {
                           <div className="mt-2 text-md font-semibold text-zinc-900">
                             {plan.title}
                           </div>
-                          <div className="mt-1 text-xs text-[#494949]">Flexible Account Options</div>
+                          <div className="mt-1 text-xs text-[#494949]">
+                            Flexible Account Options
+                          </div>
                         </div>
 
-                    <div className="text-right">
-                      <div className="text-lg font-light text-zinc-900">${plan.price}</div>
-                      <div className="text-[10px] text-[#494949]">/profile/mo</div>
+                        <div className="text-right">
+                          <div className="text-lg font-light text-zinc-900">
+                            ${plan.price}
+                          </div>
+                          <div className="text-[10px] text-[#494949]">
+                            /profile/mo
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                    </div>
-                   </div>
                   </div>
 
                   <div className="mt-5 rounded-xl bg-[#0076B70A] p-4">
@@ -332,7 +341,9 @@ export default function GetStartedPage() {
                           <span className="grid h-5 w-5 place-items-center rounded-md bg-[#0077b761] text-[#0076B7]">
                             <Check className="h-3 w-3" />
                           </span>
-                          <span className="text-[#0076B7] font-semibold text-sm">{t}</span>
+                          <span className="text-[#0076B7] font-semibold text-sm">
+                            {t}
+                          </span>
                         </div>
                       ))}
                     </div>
