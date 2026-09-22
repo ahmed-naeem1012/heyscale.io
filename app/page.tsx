@@ -3,6 +3,8 @@
 import Marquee from "react-fast-marquee";
 import Header from "./common/Header";
 import Footer from "./common/Footer";
+import Features from "./common/Features";
+import OutboundOperations from "./common/OutboundOperations";
 import {
   BadgeCheck,
   ChevronRight,
@@ -609,9 +611,8 @@ export default function Home() {
                 Profiles
               </h1>
 
-              <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-zinc-600 lg:text-base">
-                Stop Hitting Daily Limits. Start Scaling without limits with
-                aged, verified profiles for
+              <p className="mx-auto mt-5 max-w-3xl text-sm leading-7 text-zinc-600 lg:text-base">
+                Get ready-to-use LinkedIn profiles and automate outreach across all of them from one platform. Built for
               </p>
 
               <div className="mt-3 flex flex-wrap gap-1 items-center justify-center text-xs font-semibold text-[#0076B7] lg:text-sm">
@@ -639,7 +640,11 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="w-full max-w-7xl pt-12">
+        <Features />
+
+        <OutboundOperations />
+
+        {/* <section className="w-full max-w-7xl pt-12">
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {features.map(({ label, iconSrc }) => (
               <div
@@ -694,9 +699,9 @@ export default function Home() {
               </Marquee>
             </div>
           </div>
-        </section>
+        </section> */}
 
-        <section id="benefits" className="w-full max-w-7xl pt-16 mt-14">
+        {/* <section id="benefits" className="w-full max-w-7xl pt-16 mt-14">
           <div className="px-1">
             <div className="text-xs font-semibold uppercase tracking-wider text-[#0076B7]">
               Benefits
@@ -713,9 +718,9 @@ export default function Home() {
           <div className="mt-10">
             <BenefitsRail items={benefits} />
           </div>
-        </section>
+        </section> */}
 
-        <section className="w-full max-w-7xl pt-16 mt-14">
+        {/* <section className="w-full max-w-7xl pt-16 mt-14">
           <div className="px-1 text-center">
             <h3 className="text-3xl font-semibold leading-tight tracking-tight text-[#0076B7] sm:text-4xl">
               Multiple profiles, one brand, maximum ROI.
@@ -784,9 +789,9 @@ export default function Home() {
               ]}
             />
           </div>
-        </section>
+        </section> */}
 
-        <section id="pricing" className="w-full max-w-7xl pt-16 mt-14">
+        {/* <section id="pricing" className="w-full max-w-7xl pt-16 mt-14">
           <div className="px-1 text-center">
             <div className="text-xs font-semibold uppercase tracking-wider text-[#0076B7]">
               Pricing
@@ -970,9 +975,9 @@ export default function Home() {
               </a>
             </div>
           </div>
-        </section>
+        </section> */}
 
-        <section className="w-full max-w-7xl pt-20 mt-14">
+        {/* <section className="w-full max-w-7xl pt-20 mt-14">
           <div className="px-1 text-center">
             <h3 className="text-5xl font-semibold leading-tight tracking-tight text-[#0076B7] sm:text-5xl">
               Every Account. Every Detail. One Place.
@@ -992,14 +997,14 @@ export default function Home() {
               priority={false}
             />
           </div>
-        </section>
+        </section> */}
 
         <section id="testimonials" className="w-full max-w-7xl pt-20">
           <div className="px-1 text-center">
             <div className="text-xs font-semibold uppercase tracking-wider text-[#0076B7]">
               Testimonials
             </div>
-            <h3 className="mt-3 text-3xl font-semibold leading-tight tracking-tight text-[#0076B7] sm:text-5xl">
+            <h3 className="mt-3 text-3xl font-semibold leading-tight tracking-tight text-[#1B1B1B] sm:text-5xl">
               See how our customers grow their
               <br className="hidden sm:block" /> outreach and business.
             </h3>
@@ -1075,7 +1080,7 @@ export default function Home() {
             <div className="text-xs font-semibold uppercase tracking-wider text-[#0076B7]">
               FAQ
             </div>
-            <h3 className="mt-3 text-3xl font-semibold leading-tight tracking-tight text-[#0076B7] sm:text-6xl">
+            <h3 className="mt-3 text-3xl font-semibold leading-tight tracking-tight text-[#1B1B1B] sm:text-6xl">
               Frequently asked questions
             </h3>
             <p className="mx-auto mt-4 max-w-4xl text-sm leading-7 text-zinc-600 sm:text-base">

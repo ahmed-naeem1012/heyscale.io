@@ -5,6 +5,41 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
+const NAV_LINKS = [
+  { href: "/", label: "Home", isHome: true },
+  { href: "/#features", label: "Features" },
+  { href: "/#integrations", label: "Integrations" },
+  { href: "/#testimonials", label: "Testimonials" },
+  { href: "/#faq", label: "FAQ" },
+] as const;
+
+function NavLink({
+  href,
+  label,
+  active,
+  className,
+  onClick,
+}: {
+  href: string;
+  label: string;
+  active?: boolean;
+  className?: string;
+  onClick?: () => void;
+}) {
+  return (
+    <Link
+      href={href}
+      className={`relative hover:text-zinc-900 ${active ? "text-[#0076B7]" : "text-zinc-600"} ${className ?? ""}`}
+      onClick={onClick}
+    >
+      {label}
+      {active ? (
+        <span className="absolute -bottom-3 left-0 h-0.5 w-full rounded-full bg-[#0076B7]" />
+      ) : null}
+    </Link>
+  );
+}
+
 export default function Header() {
   const [open, setOpen] = useState(false);
 
@@ -20,11 +55,11 @@ export default function Header() {
   return (
     <header className="w-full px-4 pt-6">
       <div className="mx-auto w-full max-w-6xl">
-        <div className="flex items-center justify-between gap-4 rounded-full border border-zinc-200 bg-white/80 px-5 py-3 shadow-sm backdrop-blur">
-          <Link href="/" className="flex items-center gap-3">
+        <div className="grid grid-cols-[auto_1fr_auto] items-center gap-4 rounded-2xl border border-zinc-200 bg-white px-5 py-3 shadow-sm md:grid-cols-[1fr_auto_1fr]">
+          <Link href="/" className="flex items-center gap-3 justify-self-start">
             <Image
-              src="/images/logo.svg"
-              alt="Email Deliverability Consultant"
+              src="/images/heyscale-logo.svg"
+              alt="Heyscale.io"
               width={150}
               height={80}
               className="h-10"
@@ -32,35 +67,27 @@ export default function Header() {
             />
           </Link>
 
-          <nav className="hidden items-center gap-7 text-sm font-medium text-zinc-600 md:flex">
-            <Link href="/" className="relative text-[#0076B7]">
-              Home
-              <span className="absolute -bottom-3 left-0 h-0.5 w-full rounded-full bg-[#0076B7]" />
-            </Link>
-            <Link href="#benefits" className="hover:text-zinc-900">
-              Benefits
-            </Link>
-            <Link href="#pricing" className="hover:text-zinc-900">
-              Pricing
-            </Link>
-            <Link href="#testimonials" className="hover:text-zinc-900">
-              Testimonials
-            </Link>
-            <Link href="#faq" className="hover:text-zinc-900">
-              FAQ
-            </Link>
+          <nav className="hidden items-center justify-center gap-7 text-sm font-medium md:flex">
+            {NAV_LINKS.map((link) => (
+              <NavLink
+                key={link.label}
+                href={link.href}
+                label={link.label}
+                active={"isHome" in link && link.isHome}
+              />
+            ))}
           </nav>
 
-          <div className="flex items-center gap-3">
-            {/* <Link
-              href="/login"
-              className="hidden h-10 items-center justify-center rounded-full border border-zinc-200 bg-white px-5 text-sm font-medium text-zinc-700 hover:bg-zinc-50 sm:flex"
+          <div className="flex items-center justify-self-end gap-3">
+            <Link
+              href="#"
+              className="hidden h-10 items-center justify-center rounded-lg border border-zinc-200 bg-white px-5 text-sm font-semibold text-zinc-800 hover:bg-zinc-50 sm:inline-flex"
             >
               Login
-            </Link> */}
+            </Link>
             <Link
               href="/get-started"
-              className="inline-flex h-10 items-center justify-center gap-2 rounded-lg bg-[#0076B7] px-5 text-sm font-semibold text-white hover:bg-[#00676]"
+              className="inline-flex h-10 items-center justify-center gap-2 rounded-lg bg-[#0076B7] px-5 text-sm font-semibold text-white hover:bg-sky-700"
             >
               Get Started
               <ChevronRight className="h-5 w-5" />
@@ -96,7 +123,7 @@ export default function Header() {
               >
                 <Image
                   src="/images/logo.svg"
-                  alt="Email Deliverability Consultant"
+                  alt="Heyscale.io"
                   width={150}
                   height={80}
                   className="h-10"
@@ -113,43 +140,28 @@ export default function Header() {
               </button>
             </div>
 
-            <nav id="mobile-menu" className="mt-5 space-y-2 text-sm font-medium text-zinc-700">
-              <Link
-                href="/"
-                className="block rounded-lg px-3 py-2 hover:bg-zinc-50"
-                onClick={() => setOpen(false)}
-              >
-                Home
-              </Link>
-              <Link
-                href="#benefits"
-                className="block rounded-lg px-3 py-2 hover:bg-zinc-50"
-                onClick={() => setOpen(false)}
-              >
-                Benefits
-              </Link>
-              <Link
-                href="#pricing"
-                className="block rounded-lg px-3 py-2 hover:bg-zinc-50"
-                onClick={() => setOpen(false)}
-              >
-                Pricing
-              </Link>
-              <Link
-                href="#testimonials"
-                className="block rounded-lg px-3 py-2 hover:bg-zinc-50"
-                onClick={() => setOpen(false)}
-              >
-                Testimonials
-              </Link>
-              <Link
-                href="#faq"
-                className="block rounded-lg px-3 py-2 hover:bg-zinc-50"
-                onClick={() => setOpen(false)}
-              >
-                FAQ
-              </Link>
-              <div className="pt-3">
+            <nav
+              id="mobile-menu"
+              className="mt-5 space-y-2 text-sm font-medium text-zinc-700"
+            >
+              {NAV_LINKS.map(({ href, label }) => (
+                <Link
+                  key={label}
+                  href={href}
+                  className="block rounded-lg px-3 py-2 hover:bg-zinc-50"
+                  onClick={() => setOpen(false)}
+                >
+                  {label}
+                </Link>
+              ))}
+              <div className="flex flex-col gap-3 pt-3">
+                <Link
+                  href="/login"
+                  className="inline-flex h-11 w-full items-center justify-center rounded-lg border border-zinc-200 bg-white px-5 text-sm font-semibold text-zinc-800 hover:bg-zinc-50"
+                  onClick={() => setOpen(false)}
+                >
+                  Login
+                </Link>
                 <Link
                   href="/get-started"
                   className="inline-flex h-11 w-full items-center justify-center gap-2 rounded-lg bg-[#0076B7] px-5 text-sm font-semibold text-white hover:bg-sky-700"
